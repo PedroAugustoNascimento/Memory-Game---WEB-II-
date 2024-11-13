@@ -1,0 +1,53 @@
+.grid{
+    display: grid;
+    width: 100%;
+    max-width: 400px;
+    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto;
+}
+
+
+body{
+    background-color: #f3f4f6;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card{
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: aqua;
+    border-radius: 10px;
+    position:relative;
+    transition: all 600ms ease;
+    transform-style: preserve-3d;
+}
+
+.face{
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    border-radius: 10px;
+}
+
+.front{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    transform: rotateY(180deg);
+}
+
+.back{
+    background-color: gray;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    backface-visibility: hidden;
+}
+
+.card:hover{
+    transform: rotateY(180deg);
+}
+
