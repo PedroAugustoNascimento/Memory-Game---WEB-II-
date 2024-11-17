@@ -5,20 +5,32 @@
     gap: 15px;
     grid-template-columns: repeat(4, 1fr);
     margin: 0 auto;
+    margin-top: 40px;
 }
 
 
 body{
-    background-color: #f3f4f6;
+    background-color: #feffd4;
+    display:flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #c5b89f;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width:450px;
+    width:100%;
 }
 
 .card{
     width: 100%;
     aspect-ratio: 1/1;
-    background-color: aqua;
     border-radius: 10px;
     position:relative;
     transition: all 600ms ease;
@@ -30,24 +42,55 @@ body{
     height: 100%;
     position:absolute;
     border-radius: 10px;
+    transition: all 500ms ease;
 }
 
 .front{
-    background-color: white;
+    background-color: #feffd4;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
+    font-size: 40px;
     transform: rotateY(180deg);
 }
 
 .back{
-    background-color: gray;
+    background-color: #9e2d4a;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     backface-visibility: hidden;
 }
 
-.card:hover{
+.reveal-card{
     transform: rotateY(180deg);
 }
 
+.matched{
+    background-color: green;
+    color: white;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #21000f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top:40px;
+}
+
+button:hover {
+    background-color: #feffd4;
+    color:black;
+    transition: all 400ms ease;
+}
+
+h1{
+    margin-bottom:40px;
+    color: #450b1e;
+}
+
+span{
+    margin-bottom:40px;
+    color: #450b1e;
+}
