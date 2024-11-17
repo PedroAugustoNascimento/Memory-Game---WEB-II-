@@ -1,5 +1,7 @@
 const grid = document.querySelector('.grid');
 const timerDisplay = document.getElementById('timer');
+const moves = document.getElementById('moves');
+
 
 const letters = [
     { id: 1, value: 'A' },
@@ -24,6 +26,15 @@ let locks = false;
 let timerInterval;
 let timeElapsed = 0;
 let timerStarted = false;
+let moviments = 0;
+
+
+const startMoves = () =>{
+
+
+
+
+}
 
 const startTimer = () => {
     if (!timerStarted) {
@@ -121,7 +132,7 @@ const revealCard = ({ target }) => {
     }
 };
 
-const createCard = letter => {
+const createCard = (letter) => {
     const card = createElement('div', 'card');
     const front = createElement('div', 'face front');
     const back = createElement('div', 'face back');
@@ -152,7 +163,7 @@ const loadGame = () => {
     });
 };
 
-const shuffle = array => {
+const shuffle = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
