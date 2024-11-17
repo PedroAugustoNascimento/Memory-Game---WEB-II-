@@ -96,6 +96,7 @@ const endGame = () => {
     const matched = document.querySelectorAll('.matched');
     if (matched.length === letters.length * 2) {
         alert(`Parabéns! Você finalizou o jogo em ${timeElapsed} segundos.`);
+        resetGame();
         return true;
     }
     return false;
