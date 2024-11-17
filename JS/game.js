@@ -30,10 +30,13 @@ let moviments = 0;
 
 
 const startMoves = () =>{
+    moviments++;
+    moves.textContent =  moviments;
+}
 
-
-
-
+const resetMoves = () =>{
+    moviments = 0;
+    moves.textContent = 0;
 }
 
 const startTimer = () => {
@@ -93,7 +96,7 @@ const resetGame = () => {
         locks = false;
 
         resetTimer();
-
+        resetMoves();
         const cards = document.querySelectorAll('.card');
         cards.forEach(card => {
             card.classList.remove('reveal-card', 'matched');
@@ -106,7 +109,7 @@ const resetGame = () => {
 const endGame = () => {
     const matched = document.querySelectorAll('.matched');
     if (matched.length === letters.length * 2) {
-        alert(`Parabéns! Você finalizou o jogo em ${timeElapsed} segundos.`);
+        alert(`Parabéns! Você finalizou o jogo em ${timeElapsed} segundos e utilizou ${moviments} movimentos.`);
         resetGame();
         return true;
     }
@@ -145,6 +148,7 @@ const createCard = (letter) => {
     card.appendChild(back);
 
     card.addEventListener('click', revealCard);
+    card.addEventListener('click',startMoves);
     card.setAttribute('data-letter', letter.value);
 
     return card;
